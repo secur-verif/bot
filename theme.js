@@ -30,6 +30,8 @@ function changeTheme(themeName) {
 
 }
 
+changeTheme("dark");
+
 themeButton.addEventListener("click", (e) => {
     e.preventDefault()
 
