@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    transition: all .4s;
+}
+
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+:root {
+    --default-container: #303136;
+    --default-button: #fff;
+    --primary: #5865f2;
+    --default: aliceblue;
+    --default-dark: #252525;
+}
+
+body {
+    color: #111111;
+    background-color: var(--default);
+}
+body.dark {
+    color: #fff;
+    background-color: var(--default-dark);
+}
+
+section {
+    margin-top: 125px;
+}
+
+/* Change theme */
+
+.switch-btn {
+    display: inline-block;
+    width: 62px;
+    height: 24px;
+    border-radius: 12px;
+    background: #303136;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: all .5s;
+}
+.switch-btn::after {
+    content: "";
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    background: rgb(158, 158, 158);
+    top: -6px;
+    left: -6px;
+    transition: all .5s;
+    position: absolute;
+    z-index: 1;
+}
+.switched::after {
+    left: 30px;
+    background: #1a1a1a;
+}
+
+/* Header */
+
+.header .container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu ul {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-item {
+    margin-right: 25px;
+}
+
+.menu-item a {
+    color: var(--default-navigation);
+}
+
+.menu-item.active a {
+    color: var(--default-navigation-active);
+    font-weight: 600;
+}
+
+.theme {
+    display: flex;
+    margin-left: auto;
+}
+
+/* Hero */
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.hero-text {
+    font-size: 18px;
+}
+
+.hero-actions {
+    margin-top: 20px;
+}
+
+.hero-actions .btn {
+    margin-right: 10px;
+}
+
+.section-info {
+    text-align: center;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.subtitle {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.subtitle span {
+    position: relative;
+}
+
+.subtitle span::after {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    border-radius: 4px;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary);
+}
+
+/* buttons */
+
+.btn {
+    padding: 10px 20px;
+    border: 1.5px solid transparent;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color .5s ease;
+}
+.btn.primary {
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+}
+.btn.primary:hover {
+    color: var(--default-button);
+    background-color: var(--primary);
+}
+
+.btn.default {
+    border: 1.5px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--default-button);
+}
+
+/* Adventures */
+
+.adventures-list {
+    display: flex;
+    width: 580px;
+    margin: 0 auto;
+}
+
+.adventures-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.adventure {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--default-container);
+    padding: 35px 15px;
+    height: 100px;
+    border-radius: 7px;
+    align-items: center;
+    box-shadow: 2px 2px 8px #111111;
+}
+
+.adventure-title {
+    display: flex;
+    font-size: 26px;
+    font-weight: 600;
+    position: relative;
+}
+
+.adventure-title::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: var(--primary);
+}
+
+.adventure-content {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    max-width: 250px;
+    font-weight: 500;
+}
+
+/* Stats */
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+}
+
+.stats-row ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.stats-item {
+    background-color: var(--default-container);
+    padding: 20px 30px;
+    position: relative;
+    font-size: 18px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px #111111;
+    width: 170px;
+}
+
+/* Media */
+
+@media (max-width: 420px) {
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-actions .btn {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 588px) {
+    .adventures-list {
+        display: flex;
+        justify-content: space-around;
+    }
+    .adventures-list ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
