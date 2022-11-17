@@ -3,7 +3,8 @@
 body {
     padding: 0;
     margin: 0;
-    transition: all .4s;
+    transition: all .5s;
+    background-color: var(--default-bg);
 }
 
 a {
@@ -16,6 +17,7 @@ ul {
 
 * {
     font-family: 'Nunito', sans-serif;
+    color: var(--default-color-active);
 }
 
 .container {
@@ -24,20 +26,12 @@ ul {
 }
 
 :root {
-    --default-container: #303136;
-    --default-button: #fff;
+    --default-container: #fff;
+    --default-color: #e7e7e7;
+    --default-color-active: #000;
     --primary: #5865f2;
-    --default: aliceblue;
-    --default-dark: #252525;
-}
-
-body {
-    color: #111111;
-    background-color: var(--default);
-}
-body.dark {
-    color: #fff;
-    background-color: var(--default-dark);
+    --default-bg: #f0f8ff;
+    --default-shadow: #111;
 }
 
 section {
@@ -46,35 +40,10 @@ section {
 
 /* Change theme */
 
-.switch-btn {
-    display: inline-block;
-    width: 62px;
-    height: 24px;
-    border-radius: 12px;
-    background: #303136;
-    z-index: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
+.theme {
+    display: flex;
+    margin-left: auto;
     cursor: pointer;
-    position: relative;
-    transition: all .5s;
-}
-.switch-btn::after {
-    content: "";
-    height: 36px;
-    width: 36px;
-    border-radius: 18px;
-    background: rgb(158, 158, 158);
-    top: -6px;
-    left: -6px;
-    transition: all .5s;
-    position: absolute;
-    z-index: 1;
-}
-.switched::after {
-    left: 30px;
-    background: #1a1a1a;
 }
 
 /* Header */
@@ -107,17 +76,12 @@ section {
 }
 
 .menu-item a {
-    color: var(--default-navigation);
+    color: var(--default-color);
 }
 
 .menu-item.active a {
-    color: var(--default-navigation-active);
+    color: var(--default-color-active);
     font-weight: 600;
-}
-
-.theme {
-    display: flex;
-    margin-left: auto;
 }
 
 /* Hero */
@@ -190,14 +154,14 @@ section {
     color: var(--primary);
 }
 .btn.primary:hover {
-    color: var(--default-button);
+    color: var(--default-color-active);
     background-color: var(--primary);
 }
 
 .btn.default {
     border: 1.5px solid var(--primary);
     background-color: var(--primary);
-    color: var(--default-button);
+    color: var(--default-color-active);
 }
 
 /* Adventures */
@@ -223,7 +187,7 @@ section {
     height: 100px;
     border-radius: 7px;
     align-items: center;
-    box-shadow: 2px 2px 8px #111111;
+    box-shadow: 2px 2px 8px var(--default-shadow);
 }
 
 .adventure-title {

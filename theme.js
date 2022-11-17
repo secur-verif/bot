@@ -1,27 +1,39 @@
 const root = document.querySelector(":root");
-const themeButton = document.querySelector(".theme");
+const themeButton = document.getElementById("theme");
 
-function setTheme(theme) {
-    switch (theme) {
-        case "dark":
-            root.style.setProperty("--default-container", "#303136");
-            root.style.setProperty("--default-navigation", "#e7e7e7");
-            root.style.setProperty("--default-navigation-active", "#fff");
-            themeButton.querySelector("i").classList.replace("ri-moon-line", "ri-sun-line");
-            break;
+function changeTheme(themeName) {
 
-        default:
-            root.style.setProperty("--default-container", "#fff");
-            root.style.setProperty("--default-navigation", "#303136");
-            root.style.setProperty("--default-navigation-active", "#000");
-            themeButton.querySelector("i").classList.replace("ri-sun-line", "ri-moon-line");
-            break;
+    const properties = {
+        dark: {
+            "--default-container": "#303136",
+            "--default-color": "#e7e7e7",
+            "--default-color-active": "#fff",
+            "--default-bg": "#252525",
+            "--default-shadow": "#111"
+        },
+        white: {
+            "--default-container": "#fff",
+            "--default-color": "#e7e7e7",
+            "--default-color-active": "#000",
+            "--default-bg": "#f0f8ff",
+            "--default-shadow": "#111"
+        }
     }
+
+    const theme = themeName==="dark" ? "dark" : "white";
+
+    for(const property in properties[theme]) {
+        const value = properties[theme][property];
+
+        root.style.setProperty(property, value);
+    }
+
 }
 
 themeButton.addEventListener("click", (e) => {
-    themeButton.classList.toggle("switched");
-    document.body.classList.toggle("dark");
+    e.preventDefault()
 
-    setTheme(document.body.classList[0]);
+    document.body.classList.toggle("dark");
+    changeTheme(document.body.classList[0]);
+
 })
