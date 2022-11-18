@@ -168,7 +168,7 @@ section {
 
 .adventures-list {
     display: flex;
-    width: 580px;
+    max-width: 580px;
     margin: 0 auto;
 }
 
@@ -217,14 +217,15 @@ section {
 
 /* Stats */
 
-.stats-row {
+.stats {
     display: flex;
     justify-content: center;
 }
 
-.stats-row ul {
+.stats ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
 }
 
